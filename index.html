@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка РП-ника</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <button class="ghost theme" id="theme" type="button" aria-label="Сменить тему">Тема</button>
+  <h1>Проверка РП-ника</h1>
+  <p class="lead">Введите ник — страница сама проверит формат <b>Имя_Фамилия</b>, написание, запрещённые слова и похожесть на настоящее имя. Всё работает в браузере, без сервера.</p>
+
+  <section class="panel">
+    <label for="nick">Игровой ник</label>
+    <div class="row">
+      <input type="text" id="nick" placeholder="Karatel_One" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="40">
+      <button type="button" id="go">Проверить</button>
+    </div>
+    <p class="hint">Проверка запускается и по Enter, и сразу при вводе.</p>
+    <div class="examples" id="examples" aria-label="Примеры"></div>
+  </section>
+
+  <div id="result" aria-live="polite"></div>
+
+  <details>
+    <summary>Проверить сразу список ников</summary>
+    <textarea id="bulk" placeholder="Один ник на строку&#10;John_Miller&#10;xXKillerXx&#10;Carlos_Santiago"></textarea>
+    <button type="button" id="bulkGo">Проверить список</button>
+    <div class="table-wrap" id="bulkOut"></div>
+  </details>
+
+  <footer>Правила у каждого сервера свои. Эта проверка ориентируется на типичные требования РП-проектов (GTA SA:MP, CRMP, RAGE:MP и др.), поэтому итог — подсказка, а не решение администрации.</footer>
+</main>
+
+<script src="data.js"></script>
+<script src="checker.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
